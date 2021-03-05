@@ -1,0 +1,45 @@
+body
+{ 
+	font-family: Comic Sans MS;
+}
+header
+{
+	width: 1000px; 
+	margin:0 auto;
+}
+article
+{
+	width: 770px;
+	margin: 0 auto;
+}
+img
+{
+	margin-top: 20px;
+	margin-right: 50px;
+	width: 330px; 
+	height: 350px;
+	border-radius: 5px;
+	float: left;
+}
+h1
+{
+	font: 600 40px/42px Comic Sans Ms;
+    text-align: center;
+}
+h2
+{
+    margin-top: 20px;
+}
+.my_hobbies
+{
+	float: left;
+}
+.clear
+{
+	clear: both;
+}
+footer
+{
+	margin-top: 20px;
+	text-align: center;
+}
