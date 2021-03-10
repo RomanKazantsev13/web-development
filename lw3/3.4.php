@@ -7,7 +7,8 @@ $email = $_GET['email'];
 $age = $_GET['age'];
 
 header('Content-Type: text/plain');
-if (!empty($email)){
+if (!empty($email))
+{
     $file = fopen($filename, 'w');
     fwrite($file, 'First name: ' . $first_name . PHP_EOL);
 	fwrite($file, 'Last name: ' . $last_name . PHP_EOL);
@@ -16,6 +17,7 @@ if (!empty($email)){
 	fclose($file);
 
 }
-else{
+else
+{
 	echo 'Вы не ввели обязательный параметр - email';
 }

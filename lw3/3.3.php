@@ -1,6 +1,8 @@
 <?php  //Password Strength
 
 $data = $_GET['password'];
+echo urlencode('&');
+
 
 header('Content-Type: text/plain');
 if (empty($data))
@@ -10,17 +12,17 @@ if (empty($data))
 elseif(!preg_match('/[^A-Za-z0-9]+/', $data))
 {
     $len = strlen($data);
-	if($len !== 0)
+	if ($len !== 0)
 	{
 	    $reliability = $reliability + ($len * 4); // symbols (4*n)
 	} 
 
 	$calculations = preg_match_all('/[0-9]/', $data);
-	if($calculations !== 0)
+	if ($calculations !== 0)
 	{
 	    $reliability = $reliability + ($calculations * 4); // numbers +(4*n)
 	} 
-
+ 
 	$calculations = preg_match_all('/[A-Z]/', $data);
 	if($calculations !== 0)
 	{
@@ -28,7 +30,7 @@ elseif(!preg_match('/[^A-Za-z0-9]+/', $data))
 	} 
 
 	$calculations = preg_match_all('/[a-z]/', $data);
-    if($calculations !== 0)
+    if ($calculations !== 0)
     {
         $reliability = $reliability + (($len - $calculations) * 2); //uppercase letters +((len-n)*2)
     } 
@@ -53,8 +55,9 @@ elseif(!preg_match('/[^A-Za-z0-9]+/', $data))
 
     echo $reliability;	
 }
-else{
-	echo "Вы ввели некорректный пароль";
+else
+{
+	echo 'Вы ввели некорректный пароль';
 }
 // test
 

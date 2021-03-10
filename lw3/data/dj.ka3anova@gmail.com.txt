@@ -1,4 +1,4 @@
-First name: Roman
-Last name: Kazantsev
+First name: 
+Last name: 
 Email: dj.ka3anova@gmail.com
-Age: 2
+Age: 
