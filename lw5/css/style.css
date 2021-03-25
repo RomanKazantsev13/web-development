@@ -12,11 +12,6 @@ a
     text-decoration: none;
 }
 
-label, input, textarea
-{
-    display: block;
-}
-
 .clear
 {
     clear: both;
@@ -565,6 +560,7 @@ label, input, textarea
 
 .form__header
 {
+    display: block;
     margin-top: 30px;
     display: block;
     color: #999999;
@@ -573,6 +569,7 @@ label, input, textarea
 
 .input_form
 {
+    display: block;
     margin-top: 10px;
     width: 464px;
     background-color: #fff;
