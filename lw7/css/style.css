@@ -244,6 +244,7 @@ a
 .design
 {
     width: 205px;
+    display: flex;
 }
 
 .shape
@@ -251,7 +252,6 @@ a
     margin: 4px 9px;
     width: 79px;
     height: 1px;
-    float: left;
     background-color: #000;
 }
 
@@ -260,7 +260,6 @@ a
     margin-top: 2px;
     width: 7px;
     height: 7px;
-    float: left;
     border-radius: 3px;
     background-color: #e74c3c;
 }
@@ -449,6 +448,12 @@ a
 }
 
 .services-header
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.services-header__text
 {
     display: inline-block;
     margin: 0 0 35px 280px;
