@@ -2,12 +2,11 @@ function simpleCalculate(value) {
 
     let result
 
+    value = value.replace(/ +/g, ' ').trim();
     value = value.split(' ')
     let operation = value[0]
     let firstTerm = Number(value[1]) // на этом этапе можно выводить ошибки
     let secondTerm = Number(value[2])
-
-    console.log(firstTerm + " " + operation + " " + secondTerm)
 
     switch (operation) {
         case '+':
@@ -39,18 +38,15 @@ function calc(value) {
     stringReplaced = value.slice(i1, i2 + 1)
     contentString = value.slice(i1 + 1, i2)
 
-    console.log("stringBeforeReplace " + value)
+    value = value.replace(stringReplaced, " " + calc(contentString))
 
-    value = value.replace(stringReplaced, "" + calc(contentString))
-
-    console.log("replace again " + calc(value))
-
-    console.log("what is here " + value)
+    console.log(value)
+    return calc(value)
 }
 // includes
 // Проверяет, содержит ли строка указанную подстроку.
 // Возвращает значение true или false.
 // Вторым параметром можно указать позицию в строке, с которой следует начать поиск.
 
-если indexOf !== lastIndexOf
-тогда надо днлпть рекусрию для обоих слагаемых
+// если indexOf !== lastIndexOf
+// тогда надо делать рекусрию для обоих слагаемых

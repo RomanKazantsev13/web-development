@@ -10,9 +10,9 @@ function getResult(n) {
         }
     }
     if (isPrime) {
-        console.log('простое число: ' + n)
+        return console.log('простое число: ' + n)
     } else {
-        console.log('не простое число: ' + n)
+        return console.log('не простое число: ' + n)
     }
 }
 
