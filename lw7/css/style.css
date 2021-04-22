@@ -3,8 +3,8 @@
 
 body
 {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 a
@@ -302,7 +302,7 @@ a
     font: 700 14px Open Sans;
 }
 
-.downIco
+.down-ico
 {
     width: 74px;
     margin: 215px auto 0 auto;
@@ -328,11 +328,18 @@ a
     background-color: #f4f5f9;
 }
 
-.downIco__element
+.down-ico__element
 {
     position: absolute;
     top: 20px;
     left: 25px;
+}
+
+.services-icon
+{
+    position: absolute;
+    top: 25px;
+    left: 23px;
 }
 
 .advantages
@@ -505,7 +512,7 @@ a
 
 .contact-header
 {
-    padding-top: 151px;
+    padding-top: 154px;
     letter-spacing: 2px;
     color: #6a6a6a;
     text-align: center;

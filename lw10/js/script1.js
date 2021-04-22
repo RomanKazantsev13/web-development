@@ -10,36 +10,33 @@ function getResult(n) {
         }
     }
     if (isPrime) {
-        return console.log('простое число: ' + n)
+        return 'Результат: ' + n + ' is prime number'
     } else {
-        return console.log('не простое число: ' + n)
+        return 'Результат: ' + n + ' is not prime number'
     }
 }
 
 function isPrimeNumber(value) {
     if (typeof (value) === 'number') {
-        getResult(value)
+        return getResult(value)
     } else if (value instanceof Array) {
 
-        let checkArray = true
+        let resultArray = '\n'
         if (value.length !== 0) {
             for (let i = 0; i < value.length; i++) {
                 if (typeof (value[i]) !== 'number') {
-                    checkArray = false
-                    return console.log('в массив надо положить только числа, а то не по кайфу')
+                    return 'Массив содержит элементы, которые не являются числом'
                 }
             }
             for (let i = 0; i < value.length; i++) {
-                getResult(value[i])
+                resultArray += (getResult(value[i]) + '\n')
             }
+            return resultArray
         } else {
-            return console.log('пустой массив, серьезно?')
+            return 'Массив пуст'
         }
 
     } else {
-        return console.log('ты по-моему перепутал')
+        return 'Непподерживаемый тип данных'
     }
 }
-
-console.log('Введите число либо массив чисел, для того чтобы проверить является ли число простым')
-console.log('Для проверки используйте функцию isPrimeNumber(value)')

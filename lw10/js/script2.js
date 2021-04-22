@@ -1,11 +1,12 @@
 function simpleCalculate(value) {
 
-    let result
-
-    value = value.replace(/ +/g, ' ').trim();
+    value = value.replace(/^\s*(.*)\s*$/, '$1')
+    value = value.replace(/ +/g, ' ').trim()
     value = value.split(' ')
+
+    let result
     let operation = value[0]
-    let firstTerm = Number(value[1]) // на этом этапе можно выводить ошибки
+    let firstTerm = Number(value[1])
     let secondTerm = Number(value[2])
 
     switch (operation) {
@@ -28,25 +29,17 @@ function calc(value) {
 
     let stringReplaced
     let contentString
-    let i1 = value.indexOf ('(')
-    let i2 = value.lastIndexOf (')')
+    let i1 = value.indexOf('(')
+    let i2 = value.lastIndexOf(')')
 
-    if (i1 === -1 && i2 === -1) { //скобок больше нет, сделать замену в будущем
-       return simpleCalculate(value)
+    if (i1 === -1 && i2 === -1) {
+        return simpleCalculate(value)
     }
 
-    stringReplaced = value.slice(i1, i2 + 1)
-    contentString = value.slice(i1 + 1, i2)
+    stringReplaced = value.slice(i1, i2 + 1) // '( ... )'
+    contentString = value.slice(i1 + 1, i2)  // '  ...  '
 
     value = value.replace(stringReplaced, " " + calc(contentString))
 
-    console.log(value)
     return calc(value)
 }
-// includes
-// Проверяет, содержит ли строка указанную подстроку.
-// Возвращает значение true или false.
-// Вторым параметром можно указать позицию в строке, с которой следует начать поиск.
-
-// если indexOf !== lastIndexOf
-// тогда надо делать рекусрию для обоих слагаемых

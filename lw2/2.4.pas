@@ -5,35 +5,11 @@ USES
 FUNCTION GetQueryStringParameter(Key: STRING): STRING;
 VAR
   Data: STRING;
-  BegPrt, MidPrt, EndPrt: INTEGER;
+  PosKey: INTEGER;
 BEGIN{GetQueryStringParameter}
-  BegPrt := 0; {Key}
-  MidPrt := 0; {= для вычисления начала значения параметра}
-  EndPrt := 0; {& OR EOLN для вычисления конца значения параметра}
-  Data := GetEnv('QUERY_STRING'); 
-  BegPrt := Pos(Key, Data);{находим позицию параметра}
+  Data := GetEnv('QUERY_STRING');
+  PosKey := Pos(Key, Data);
   
-  {IF BegPrt = 0
-  THEN
-    Data := ''
-  ELSE  }
-    BEGIN
-      Delete(Data, 1, BegPrt);
-      BegPrt := Pos(Key, Data);{пересчитываем позицию параметра}  
-      MidPrt := Pos('=', Data);  
-      EndPrt := Pos('&', Data);
-    
-      IF EndPrt = 0
-      THEN
-        Delete(Data, 1, MidPrt) 
-      ELSE
-        BEGIN
-          MidPrt := MidPrt + 1;
-          EndPrt := EndPrt - MidPrt;{высчитываем длину значения параметра}                   
-          Data := Copy(Data, MidPrt, EndPrt)  
-        END;      
-    END;  
-     
   GetQueryStringParameter := Data
 END;{GetQueryStringParameter} 
   
